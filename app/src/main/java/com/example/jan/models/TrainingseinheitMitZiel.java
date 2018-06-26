@@ -11,8 +11,8 @@ public class TrainingseinheitMitZiel extends Trainingseinheit implements Trainin
     private int kalorienZiel;
     private Fitnessgeraet fitnessgeraet;
 
-    TrainingseinheitMitZiel(int dauer, int tag, int monat, int jahr,
-                            int hh, int mm, Fitnessgeraet fitnessgeraet, int kalorienZiel) {
+    public TrainingseinheitMitZiel(int dauer, int tag, int monat, int jahr,
+                                   int hh, int mm, Fitnessgeraet fitnessgeraet, int kalorienZiel) {
         super(dauer, fitnessgeraet, new Date(jahr-1900, monat-1, tag, hh, mm));
         this.setKalorienZiel(kalorienZiel);
         this.fitnessgeraet = fitnessgeraet;

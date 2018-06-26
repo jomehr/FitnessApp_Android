@@ -73,14 +73,14 @@ public class StaticData {
     private static final Fitnessgeraet fitnessgeraet10 = new Fitnessgeraet
             ("Hanteln", "Krafttraining", 240, 100, muskelgruppe1, false,  new String[]{"Lifting", "Drücken", "Ziehen", "Werfen?"});
 
-    public static final Trainingseinheit trainingseinheit1 = new Trainingseinheit(60, fitnessgeraet1, date);
-    public static final Trainingseinheit trainingseinheit2 = new Trainingseinheit(120,fitnessgeraet2, date);
-    public static final Trainingseinheit trainingseinheit3 = new Trainingseinheit(60, fitnessgeraet3, date);
+    public static final TrainingseinheitMitZiel trainingseinheit1 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet1, 700);
+    public static final TrainingseinheitMitZiel trainingseinheit2 = new TrainingseinheitMitZiel(120, 26, 06, 2018, 11, 50, fitnessgeraet2, 500);
+    public static final TrainingseinheitMitZiel trainingseinheit3 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet3, 1000);
     public static final Trainingseinheit trainingseinheit4 = new Trainingseinheit(45, fitnessgeraet4, date);
     public static final Trainingseinheit trainingseinheit5 = new Trainingseinheit(30, fitnessgeraet5, date);
     public static final Trainingseinheit trainingseinheit6 = new Trainingseinheit(90, fitnessgeraet6, date);
-    public static final Trainingseinheit trainingseinheit7 = new Trainingseinheit(60, fitnessgeraet7, date);
-    public static final Trainingseinheit trainingseinheit8 = new Trainingseinheit(90, fitnessgeraet8, date);
+    public static final TrainingseinheitMitZiel trainingseinheit7 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50,fitnessgeraet7, 800);
+    public static final TrainingseinheitMitZiel trainingseinheit8 = new TrainingseinheitMitZiel(90, 26, 06, 2018, 11, 50,fitnessgeraet8, 2000);
     public static final Trainingseinheit trainingseinheit9 = new Trainingseinheit(120, fitnessgeraet9, date);
     public static final Trainingseinheit trainingseinheit10 = new Trainingseinheit(150, fitnessgeraet10, date);
 

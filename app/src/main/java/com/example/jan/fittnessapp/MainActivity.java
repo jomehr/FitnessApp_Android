@@ -12,9 +12,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.jan.models.CustomAdapter;
+import com.example.jan.models.TrainingsProgramm;
+
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayAdapter<String> adapter;
+    private CustomAdapter adapter;
 
     int counter;
 
@@ -26,18 +31,14 @@ public class MainActivity extends AppCompatActivity {
         Application app = getApplication();
         final TrainingsApp trainingsApp = (TrainingsApp) app;
 
-        Button button = (Button) findViewById(R.id.main_addProgramButton);
-        ListView listView = (ListView) findViewById(R.id.main_listPrograms);
+        Button addProgramButton = findViewById(R.id.main_addProgramButton);
+        Button deleteButton = findViewById(R.id.main_deleteButton);
+        ListView listView = findViewById(R.id.main_listPrograms);
 
-        if (trainingsApp.getListItems() != null) {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, trainingsApp.getListItems());
+            adapter = new CustomAdapter(this, trainingsApp.getTrainingsProgramms());
             listView.setAdapter(adapter);
-        } else {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, trainingsApp.initListItems());
-            listView.setAdapter(adapter);
-        }
 
-        button.setOnClickListener(new View.OnClickListener() {
+        addProgramButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -45,15 +46,15 @@ public class MainActivity extends AppCompatActivity {
                 counter = trainingsApp.getCounter();
                 Log.d("EXTRANUMBER1", String.valueOf(counter));
 
-                trainingsApp.getListItems().add("Trainingsprogramm " + counter);
+                //trainingsApp.getListItems().add("Trainingsprogramm " + counter);
                 trainingsApp.createProgram(counter);
                 adapter.notifyDataSetChanged();
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adapter.setOnProgramClickedListener(new CustomAdapter.OnProgramClickedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onProgramClicked(TrainingsProgramm programm, int i) {
                 Toast.makeText(MainActivity.this, "Clicked Item Nr.: "+ (i+1), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(MainActivity.this, TrainingsEinheitActivity.class);
@@ -62,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("programNumber", i);
 
                 startActivity(intent);
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<TrainingsProgramm> list = adapter.getProgrammsToDelete();
+                adapter.getProgramms().removeAll(list);
+                adapter.notifyDataSetChanged();
             }
         });
     }

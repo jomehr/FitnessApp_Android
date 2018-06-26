@@ -14,6 +14,16 @@ public class TrainingsApp extends Application {
     private ArrayList<String> listItems;
     private ArrayList<TrainingsProgramm> trainingsProgramms;
 
+    public ArrayList<TrainingsProgramm> getTrainingsProgramms() {
+        return trainingsProgramms;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        trainingsProgramms = new ArrayList<>();
+    }
+
     public int getProgrammSize() {
         return trainingsProgramms.size();
     }
@@ -28,13 +38,7 @@ public class TrainingsApp extends Application {
     }
 
     public void addTrainingsProgramm (TrainingsProgramm t) {
-        if (trainingsProgramms != null) {
             trainingsProgramms.add(t);
-        }else {
-            trainingsProgramms = new ArrayList<>();
-            trainingsProgramms.add(t);
-        }
-
     }
 
     public ArrayList<String> getListItems() {

@@ -28,11 +28,11 @@ public class Trainingseinheit implements Muskelunterstuetzung, Serializable {
         return fitnessgeraet.getGeraetename();
     }
 
-    boolean zielErreicht(int kalorienZiel) {
+    public boolean zielErreicht(int kalorienZiel) {
         return getKalorienverbrauch(this.dauer) >= kalorienZiel;
     }
 
-    double erforderlicheTrainingszeit(int kalorienZiel) {
+    public double erforderlicheTrainingszeit(int kalorienZiel) {
         return kalorienZiel / (this.fitnessgeraet.getKalorienverbrauchproh() / 60);
     }
 
