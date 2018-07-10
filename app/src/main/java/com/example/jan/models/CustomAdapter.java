@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -64,7 +65,9 @@ public class CustomAdapter extends ArrayAdapter<TrainingsProgramm> {
 
         textView.setText("Trainingsprogramm" + position);
 
-
+        ProgressBar progressBar = listItem.findViewById(R.id.list_progressbar);
+        progressBar.setMax(((TrainingseinheitMitZiel) programm.getTrainingseinheit()).getKalorienZiel());
+        progressBar.setProgress((int)((TrainingseinheitMitZiel) programm.getTrainingseinheit()).getKalorienverbrauch(programm.getTrainingseinheit().getTrainingsdauerinmin()));
 
         return listItem;
     }
@@ -74,7 +77,7 @@ public class CustomAdapter extends ArrayAdapter<TrainingsProgramm> {
         private TrainingsProgramm programm;
         private int position;
 
-        public ProjectClickedListener(TrainingsProgramm programm, int position) {
+        ProjectClickedListener(TrainingsProgramm programm, int position) {
             this.programm = programm;
             this.position = position;
         }
@@ -87,11 +90,11 @@ public class CustomAdapter extends ArrayAdapter<TrainingsProgramm> {
         }
     }
 
-    class DeleteCheckboxListener implements CompoundButton.OnCheckedChangeListener {
+    private class DeleteCheckboxListener implements CompoundButton.OnCheckedChangeListener {
 
         private TrainingsProgramm trainingsProgramm;
 
-        public DeleteCheckboxListener(TrainingsProgramm trainingsProgramm) {
+        DeleteCheckboxListener(TrainingsProgramm trainingsProgramm) {
             this.trainingsProgramm = trainingsProgramm;
         }
 

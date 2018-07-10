@@ -73,15 +73,15 @@ public class StaticData {
     private static final Fitnessgeraet fitnessgeraet10 = new Fitnessgeraet
             ("Hanteln", "Krafttraining", 240, 100, muskelgruppe1, false,  new String[]{"Lifting", "Drücken", "Ziehen", "Werfen?"});
 
-    public static final TrainingseinheitMitZiel trainingseinheit1 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet1, 700);
-    public static final TrainingseinheitMitZiel trainingseinheit2 = new TrainingseinheitMitZiel(120, 26, 06, 2018, 11, 50, fitnessgeraet2, 500);
-    public static final TrainingseinheitMitZiel trainingseinheit3 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet3, 1000);
-    public static final Trainingseinheit trainingseinheit4 = new Trainingseinheit(45, fitnessgeraet4, date);
-    public static final Trainingseinheit trainingseinheit5 = new Trainingseinheit(30, fitnessgeraet5, date);
-    public static final Trainingseinheit trainingseinheit6 = new Trainingseinheit(90, fitnessgeraet6, date);
-    public static final TrainingseinheitMitZiel trainingseinheit7 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50,fitnessgeraet7, 800);
-    public static final TrainingseinheitMitZiel trainingseinheit8 = new TrainingseinheitMitZiel(90, 26, 06, 2018, 11, 50,fitnessgeraet8, 2000);
-    public static final Trainingseinheit trainingseinheit9 = new Trainingseinheit(120, fitnessgeraet9, date);
-    public static final Trainingseinheit trainingseinheit10 = new Trainingseinheit(150, fitnessgeraet10, date);
+    public static TrainingseinheitMitZiel trainingseinheit1 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet1, 700);
+    public static TrainingseinheitMitZiel trainingseinheit2 = new TrainingseinheitMitZiel(120, 26, 06, 2018, 11, 50, fitnessgeraet2, 500);
+    public static TrainingseinheitMitZiel trainingseinheit3 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50, fitnessgeraet3, 1000);
+    public static TrainingseinheitMitZiel trainingseinheit4 = new TrainingseinheitMitZiel(45, 26, 06, 2018, 11, 50, fitnessgeraet4, 600);
+    public static TrainingseinheitMitZiel trainingseinheit5 = new TrainingseinheitMitZiel(30, 26, 06, 2018, 11, 50, fitnessgeraet5, 500);
+    public static TrainingseinheitMitZiel trainingseinheit6 = new TrainingseinheitMitZiel(90, 26, 06, 2018, 11, 50, fitnessgeraet6, 800);
+    public static TrainingseinheitMitZiel trainingseinheit7 = new TrainingseinheitMitZiel(60, 26, 06, 2018, 11, 50,fitnessgeraet7, 800);
+    public static TrainingseinheitMitZiel trainingseinheit8 = new TrainingseinheitMitZiel(90, 26, 06, 2018, 11, 50,fitnessgeraet8, 2000);
+    public static TrainingseinheitMitZiel trainingseinheit9 = new TrainingseinheitMitZiel(120, 26, 06, 2018, 11, 50, fitnessgeraet9, 1000);
+    public static TrainingseinheitMitZiel trainingseinheit10 = new TrainingseinheitMitZiel(150, 26, 06, 2018, 11, 50, fitnessgeraet10, 1400);
 
 }

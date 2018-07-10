@@ -9,6 +9,7 @@ public class TrainingseinheitMitZiel extends Trainingseinheit implements Trainin
 
     private int dauer;
     private int kalorienZiel;
+    private  double editedKalorien;
     private Fitnessgeraet fitnessgeraet;
 
     public TrainingseinheitMitZiel(int dauer, int tag, int monat, int jahr,
@@ -43,6 +44,15 @@ public class TrainingseinheitMitZiel extends Trainingseinheit implements Trainin
     public int getKalorienZiel() {
         return kalorienZiel;
     }
+
+    public void setEditedKalorien(double kalorien) {
+        this.editedKalorien = kalorien;
+    }
+
+    public double getEditedKalorien () {
+        return editedKalorien;
+    }
+
 
     @Override
     public double getZielerreichungsgrad() {
